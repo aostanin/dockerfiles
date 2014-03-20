@@ -20,6 +20,7 @@ VOLUME ["/data"]
 VOLUME ["/downloads"]
 # Torrent port
 EXPOSE 53160
+EXPOSE 53160/udp
 # WebUI
 EXPOSE 8080
 

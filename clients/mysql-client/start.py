@@ -28,7 +28,7 @@ def parse_args():
     parser_mysql.add_argument("-u", "--username",
             help="username (defaults to root)")
     parser_mysql.add_argument("-p", "--password",
-            help="password (defaults root's password from the container)")
+            help="password (defaults to root's password from the container)")
 
     return parser.parse_args()
 
