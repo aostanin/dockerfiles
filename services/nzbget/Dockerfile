@@ -10,18 +10,18 @@ ADD http://downloads.sourceforge.net/project/parchive/libpar2/0.2/libpar2-0.2.ta
 RUN tar xzf /tmp/libpar2.tar.gz && \
     rm /tmp/libpar2.tar.gz
 
-ADD http://downloads.sourceforge.net/project/nzbget/nzbget-stable/11.0/nzbget-11.0.tar.gz /tmp/nzbget.tar.gz
+ADD http://downloads.sourceforge.net/project/nzbget/nzbget-stable/12.0/nzbget-12.0.tar.gz /tmp/nzbget.tar.gz
 RUN tar xzf /tmp/nzbget.tar.gz && \
     rm /tmp/nzbget.tar.gz
 
 RUN cd /libpar2-0.2 && \
-    patch < /nzbget-11.0/libpar2-0.2-bugfixes.patch && \
-    patch < /nzbget-11.0/libpar2-0.2-cancel.patch && \
+    patch < /nzbget-12.0/libpar2-0.2-bugfixes.patch && \
+    patch < /nzbget-12.0/libpar2-0.2-cancel.patch && \
     ./configure && \
     make && \
     make install
 
-RUN cd /nzbget-11.0 && \
+RUN cd /nzbget-12.0 && \
     ./configure && \
     make && \
     make install
