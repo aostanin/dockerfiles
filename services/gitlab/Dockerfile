@@ -5,7 +5,7 @@ RUN apt-get install -y python2.7 python-docutils git-core sudo libmysqlclient-de
 
 ADD http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.bz2 /tmp/ruby.tar.bz2
 RUN cd /tmp && \
-    tar xjvf ruby.tar.bz2 && \
+    tar xf ruby.tar.bz2 && \
     cd ruby-2.0.0-p353 && \
     ./configure --disable-install-rdoc && \
     make && \
@@ -17,10 +17,10 @@ RUN gem install bundler --no-ri --no-rdoc
 RUN adduser --disabled-login --gecos 'GitLab' git
 
 RUN cd /home/git && \
-    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.8.0
+    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.9.1
 
 RUN cd /home/git && \
-    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 6-6-stable gitlab && \
+    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 6-7-stable gitlab && \
     cd gitlab && \
     chown -R git log tmp && \
     sudo -u git -H mkdir /home/git/gitlab-satellites tmp/pids tmp/sockets public/uploads && \

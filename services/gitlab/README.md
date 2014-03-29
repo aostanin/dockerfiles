@@ -2,7 +2,7 @@
 
 ## Description
 
-A Dockerfile for [GitLab](https://www.gitlab.com/) version 6.6.
+A Dockerfile for [GitLab](https://www.gitlab.com/) version 6.7.
 
 ## Volumes
 
