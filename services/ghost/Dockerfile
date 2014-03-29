@@ -6,7 +6,7 @@ RUN apt-get update -q
 
 RUN apt-get install -qy nodejs unzip
 
-ADD https://ghost.org/zip/ghost-0.4.1.zip /tmp/ghost.zip
+ADD https://ghost.org/zip/ghost-0.4.2.zip /tmp/ghost.zip
 RUN unzip -q /tmp/ghost.zip -d /ghost && rm /tmp/ghost.zip
 RUN sed -i "s/host:\s*'127.0.0.1'/host: '0.0.0.0'/" /ghost/config.example.js
 RUN cd /ghost && npm install --production
