@@ -21,9 +21,7 @@ if [ ! -d /data/db ]; then
 fi
 
 ln -sf /data/my.cnf /etc/mysql/my.cnf
-chown mysql:mysql /data
-
-bash
+chown -R mysql:mysql /data
 
 service mysql start
 
