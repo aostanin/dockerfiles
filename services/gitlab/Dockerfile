@@ -23,7 +23,7 @@ RUN cd /home/git && \
     sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 6-8-stable gitlab && \
     cd gitlab && \
     chown -R git log tmp && \
-    sudo -u git -H mkdir /home/git/gitlab-satellites tmp/pids tmp/sockets public/uploads && \
+    sudo -u git -H mkdir -p /home/git/gitlab-satellites tmp/pids tmp/sockets public/uploads && \
     chmod -R u+rwX log tmp public/uploads && \
     sudo -u git -H cp config/unicorn.rb.example config/unicorn.rb && \
     sudo -u git -H cp config/initializers/rack_attack.rb.example config/initializers/rack_attack.rb && \
