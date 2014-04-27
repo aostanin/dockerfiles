@@ -17,10 +17,10 @@ RUN gem install bundler --no-ri --no-rdoc
 RUN adduser --disabled-login --gecos 'GitLab' git
 
 RUN cd /home/git && \
-    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.9.1
+    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-shell.git -b v1.9.3
 
 RUN cd /home/git && \
-    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 6-7-stable gitlab && \
+    sudo -u git -H git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 6-8-stable gitlab && \
     cd gitlab && \
     chown -R git log tmp && \
     sudo -u git -H mkdir /home/git/gitlab-satellites tmp/pids tmp/sockets public/uploads && \
