@@ -8,4 +8,5 @@ ln -sf /data/lucene /var/subsonic/lucene
 ln -sf /data/thumbs /var/subsonic/thumbs
 
 service subsonic start
+sleep 10
 tail -f /var/subsonic/*.log
