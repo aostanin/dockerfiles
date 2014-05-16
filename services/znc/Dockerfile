@@ -1,6 +1,6 @@
 FROM aostanin/debian
 
-ENV ZNC_VERSION 1.2
+ENV ZNC_VERSION 1.4
 
 RUN apt-get install -qy --force-yes build-essential libperl-dev libssl-dev
 
