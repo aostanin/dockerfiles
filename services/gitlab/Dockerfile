@@ -37,6 +37,9 @@ RUN cd /home/git && \
 RUN cd /home/git/gitlab && \
     sudo -u git -H bundle install --deployment --without development test postgres aws
 
+# When built as a trusted build, /home/git is owned by root???
+RUN chown git:git /home/git
+
 ADD start.sh /start.sh
 
 VOLUME ["/data"]
