@@ -2,7 +2,7 @@
 
 ## Description
 
-A Dockerfile for the [BitlBee](http://www.bitlbee.org/) IRC to other chat networks gateway. Also installes the Skype plugin.
+A Dockerfile for the [BitlBee](http://www.bitlbee.org/) IRC to other chat networks gateway.
 
 ## Volumes
 

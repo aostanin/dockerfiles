@@ -1,15 +1,14 @@
-FROM aostanin/debian
+FROM ubuntu:trusty
 
-# Bitlbee now requires libotr5 which is in wheezy-backports
-RUN echo 'deb http://http.debian.net/debian wheezy-backports main' > /etc/apt/sources.list.d/squeeze-backports.list
-RUN apt-get update -q
+ENV LANG en_US.UTF-8
+RUN locale-gen $LANG
 
-RUN echo 'deb http://code.bitlbee.org/debian/devel/wheezy/amd64/ ./' > /etc/apt/sources.list.d/bitlbee.list
+RUN echo 'deb http://code.bitlbee.org/debian/devel/trusty/amd64/ ./' > /etc/apt/sources.list.d/bitlbee.list
 ADD bitlbee.key /bitlbee.key
-RUN apt-key add /bitlbee.key
-RUN apt-get update -q
+RUN apt-key add /bitlbee.key && \
+    apt-get update -q
 
-RUN apt-get install -qy bitlbee bitlbee-plugin-skype
+RUN apt-get install -qy bitlbee
 
 ADD start.sh /start.sh
 
