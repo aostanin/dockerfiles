@@ -1,17 +1,16 @@
-FROM aostanin/debian
+FROM ubuntu:trusty
 
-RUN apt-get install -qy git-core python2.7
+ENV LANG en_US.UTF-8
+RUN locale-gen $LANG
+
+RUN apt-get update -q && \
+    apt-get install -qy git-core python2.7
+
 RUN git clone https://github.com/rembo10/headphones.git /headphones
 
 ADD start.sh /start.sh
 
 VOLUME ["/data"]
-# Torrent watch directory
-VOLUME ["/torrents"]
-# Incoming downloads
-VOLUME ["/downloads"]
-# Music library
-VOLUME ["/music"]
 EXPOSE 8181
 
 CMD ["/start.sh"]

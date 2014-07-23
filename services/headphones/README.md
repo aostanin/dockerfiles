@@ -10,18 +10,6 @@ A Dockerfile for [Headphones](https://github.com/rembo10/headphones/).
 
 Configuration files and state for Headphones.
 
-### `/torrents`
-
-Watch directory for torrents.
-
-### `/downloads`
-
-Incoming downloads directory.
-
-### `/music`
-
-Music library.
-
 ## Ports
 
 ### 8181
