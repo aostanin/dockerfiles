@@ -10,18 +10,6 @@ A Dockerfile for [Couchpotato](https://couchpota.to/).
 
 Configuration files and state for Couchpotato.
 
-### `/torrents`
-
-Watch directory for torrents.
-
-### `/downloads`
-
-Incoming downloads directory.
-
-### `/movies`
-
-Movie library.
-
 ## Ports
 
 ### 5050
