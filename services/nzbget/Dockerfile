@@ -1,35 +1,27 @@
-FROM aostanin/debian
+FROM ubuntu:trusty
 
-RUN sed -i 's/main$/main non-free/' /etc/apt/sources.list
-RUN apt-get update -q
+ENV LANG en_US.UTF-8
+ENV VERSION 13.0
 
-RUN apt-get install -qy build-essential pkg-config libxml2-dev libncurses5-dev libsigc++-2.0-dev libpar2-0-dev libssl-dev
-RUN apt-get install -qy p7zip unrar
+RUN locale-gen $LANG
 
-ADD http://downloads.sourceforge.net/project/parchive/libpar2/0.2/libpar2-0.2.tar.gz /tmp/libpar2.tar.gz
-RUN tar xzf /tmp/libpar2.tar.gz && \
-    rm /tmp/libpar2.tar.gz
+RUN sed -i 's/restricted$/restricted multiverse/' /etc/apt/sources.list && \
+    apt-get update -q
 
-ADD http://downloads.sourceforge.net/project/nzbget/nzbget-stable/12.0/nzbget-12.0.tar.gz /tmp/nzbget.tar.gz
-RUN tar xzf /tmp/nzbget.tar.gz && \
-    rm /tmp/nzbget.tar.gz
+RUN apt-get install -qy build-essential pkg-config libxml2-dev libncurses5-dev libsigc++-2.0-dev libpar2-dev libssl-dev p7zip unrar
 
-RUN cd /libpar2-0.2 && \
-    patch < /nzbget-12.0/libpar2-0.2-bugfixes.patch && \
-    patch < /nzbget-12.0/libpar2-0.2-cancel.patch && \
+ADD http://downloads.sourceforge.net/project/nzbget/nzbget-stable/$VERSION/nzbget-$VERSION.tar.gz /tmp/nzbget.tar.gz
+RUN tar xf /tmp/nzbget.tar.gz && \
+    rm /tmp/nzbget.tar.gz && \
+    cd /nzbget-$VERSION && \
     ./configure && \
     make && \
-    make install
-
-RUN cd /nzbget-12.0 && \
-    ./configure && \
-    make && \
-    make install
+    make install && \
+    rm -rf /nzbget-$VERSION
 
 ADD start.sh /start.sh
 
 VOLUME ["/data"]
-VOLUME ["/downloads"]
 EXPOSE 6789
 
 CMD ["/start.sh"]
