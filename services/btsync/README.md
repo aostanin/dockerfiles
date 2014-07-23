@@ -10,10 +10,6 @@ A Dockerfile for [BitTorrent Sync](http://www.bittorrent.com/sync/).
 
 Configuration files and state for BitTorrent Sync.
 
-### `/sync`
-
-A place to put your files to sync.
-
 ## Ports
 
 ### 3369

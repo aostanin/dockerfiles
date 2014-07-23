@@ -1,13 +1,15 @@
-FROM aostanin/debian
+FROM ubuntu:trusty
 
-ADD http://download-lb.utorrent.com/endpoint/btsync/os/linux-glibc23-x64/track/stable /btsync.tar.gz
-RUN tar xvzf /btsync.tar.gz && rm /btsync.tar.gz
+ENV LANG en_US.UTF-8
+RUN locale-gen $LANG
+
+ADD http://download-lb.utorrent.com/endpoint/btsync/os/linux-x64/track/stable /btsync.tar.gz
+RUN tar xf /btsync.tar.gz && \
+    rm /btsync.tar.gz
 
 ADD start.sh /start.sh
-ADD btsync.conf /btsync.conf
 
 VOLUME ["/data"]
-VOLUME ["/sync"]
 EXPOSE 3369
 EXPOSE 3369/udp
 EXPOSE 8888

@@ -2,10 +2,6 @@
 
 set -e
 
-mkdir -p /data
+[ ! -L /.sync ] && ln -sf /data /.sync
 
-if [ ! -f /data/btsync.conf ]; then
-  cp /btsync.conf /data/btsync.conf
-fi
-
-/btsync --nodaemon --config /data/btsync.conf
+/btsync --nodaemon
