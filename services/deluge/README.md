@@ -4,15 +4,13 @@
 
 A Dockerfile for [Deluge](http://deluge-torrent.org/).
 
+The default password is `deluge`.
+
 ## Volumes
 
 ### `/data`
 
 Configuration files for Deluge.
-
-### `/downloads`
-
-Download directory for torrents.
 
 ## Ports
 
