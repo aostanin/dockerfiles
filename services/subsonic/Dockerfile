@@ -8,7 +8,8 @@ RUN apt-get update -q && \
 
 ADD http://downloads.sourceforge.net/project/subsonic/subsonic/4.9/subsonic-4.9.deb /tmp/subsonic.deb
 RUN dpkg -i /tmp/subsonic.deb && \
-    rm /tmp/subsonic.deb
+    rm -rf /tmp/subsonic.deb /var/subsonic && \
+    ln -s /data /var/subsonic
 
 # Don't fork to the background
 RUN sed -i "s/ > \${LOG} 2>&1 &//" /usr/share/subsonic/subsonic.sh
