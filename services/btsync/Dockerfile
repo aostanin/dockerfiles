@@ -10,7 +10,6 @@ RUN tar xf /btsync.tar.gz && \
 ADD start.sh /start.sh
 
 VOLUME ["/data"]
-EXPOSE 3369
 EXPOSE 3369/udp
 EXPOSE 8888
 
