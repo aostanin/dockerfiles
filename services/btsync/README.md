@@ -12,10 +12,6 @@ Configuration files and state for BitTorrent Sync.
 
 ## Ports
 
-### 3369
-
-Sync protocol TCP port.
-
 ### 3369/udp
 
 Sync protocol UDP port.
