@@ -2,8 +2,6 @@
 
 set -e
 
-[ ! -d /data/transcode ]        && mkdir /data/transcode
-[ ! -L /data/transcode/ffmpeg ] && ln -sf /usr/bin/avconv /data/transcode/ffmpeg
-[ ! -L /data/transcode/lame ]   && ln -sf /usr/bin/lame /data/transcode/lame
+[ ! -L /data/transcode ] && ln -s /var/subsonic.default/transcode /data/transcode
 
 /usr/share/subsonic/subsonic.sh
