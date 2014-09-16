@@ -17,6 +17,10 @@ RUN apt-get update -q && \
     sed -i 's/<serviceHost>127.0.0.1<\/serviceHost>/<serviceHost>0.0.0.0<\/serviceHost>/g' /usr/local/crashplan/conf/my.service.xml && \
     mv /usr/local/crashplan/conf /usr/local/crashplan/conf.default && \
     ln -s /data/conf /usr/local/crashplan/conf && \
+    mv /usr/local/crashplan/log /usr/local/crashplan/log.default && \
+    ln -s /data/log /usr/local/crashplan/log && \
+    mv /var/lib/crashplan /var/lib/crashplan.default && \
+    ln -s /data/crashplan /var/lib/crashplan && \
     rm -rf /tmp/CrashPlan.tgz /tmp/CrashPlan-install
 
 ADD start.sh /start.sh
