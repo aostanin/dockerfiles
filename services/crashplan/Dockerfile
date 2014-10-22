@@ -4,7 +4,7 @@ ENV LANG en_US.UTF-8
 
 RUN locale-gen $LANG
 
-ADD http://download.code42.com/installs/linux/install/CrashPlan/CrashPlan_3.6.3_Linux.tgz /tmp/CrashPlan.tgz
+ADD http://download.code42.com/installs/linux/install/CrashPlan/CrashPlan_3.6.4_Linux.tgz /tmp/CrashPlan.tgz
 RUN apt-get update -q && \
     apt-get install -qy openjdk-7-jre-headless && \
     cd /tmp && \
