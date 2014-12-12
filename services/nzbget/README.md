@@ -2,7 +2,7 @@
 
 ## Description
 
-A Dockerfile for [NZBGet](http://nzbget.net/) version 14.0.
+A Dockerfile for [NZBGet](http://nzbget.net/) version 14.1.
 
 The default login is `nzbget` / `tegbzn6789`.
 
