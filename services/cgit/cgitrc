@@ -1,0 +1,6 @@
+virtual-root=/
+enable-index-links=1
+enable-git-config=1
+snapshots=tar.gz tar.bz2 tar.xz zip
+clone-url=git@$SERVER_NAME:$CGIT_REPO_URL
+scan-path=/repositories
