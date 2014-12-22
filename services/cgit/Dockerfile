@@ -10,7 +10,7 @@ RUN apt-get update -q && \
 ADD lighttpd.conf /etc/lighttpd/lighttpd.conf.default
 ADD cgitrc /etc/cgitrc.default
 
-RUN git clone git://git.zx2c4.com/cgit /tmp/cgit && \
+RUN git clone https://github.com/zx2c4/cgit.git /tmp/cgit && \
     cd /tmp/cgit && \
     git submodule update --init && \
     make install && \
