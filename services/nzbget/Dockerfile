@@ -19,6 +19,10 @@ RUN tar xf /tmp/nzbget.tar.gz && \
     make install && \
     rm -rf /nzbget-$VERSION
 
+RUN sed 's|~/downloads|/nzbmain|g' /usr/local/share/nzbget/nzbget.conf && \
+    mkdir /nzbmain
+VOLUME ["/nzbmain"]
+
 ADD start.sh /start.sh
 
 VOLUME ["/data"]
