@@ -4,7 +4,7 @@ ENV LANG en_US.UTF-8
 
 RUN locale-gen $LANG
 
-ADD http://download.code42.com/installs/linux/install/CrashPlan/CrashPlan_3.7.0_Linux.tgz /tmp/CrashPlan.tgz
+ADD http://download.code42.com/installs/linux/install/CrashPlan/CrashPlan_4.2.0_Linux.tgz /tmp/CrashPlan.tgz
 RUN apt-get update -q && \
     apt-get install -qy curl && \
     cd /tmp && \
