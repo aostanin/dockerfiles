@@ -1,7 +1,7 @@
 FROM ubuntu:trusty
 
 ENV LANG en_US.UTF-8
-ENV VERSION 14.2
+ENV VERSION 15.0
 
 RUN locale-gen $LANG
 
