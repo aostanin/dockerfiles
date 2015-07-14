@@ -2,7 +2,7 @@
 
 ## Description
 
-A Dockerfile for [Subsonic](http://www.subsonic.org/) version 5.2.
+A Dockerfile for [Subsonic](http://www.subsonic.org/) version 5.2.1.
 
 ## Volumes
 

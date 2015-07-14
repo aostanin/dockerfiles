@@ -6,7 +6,7 @@ RUN locale-gen $LANG
 RUN apt-get update -q && \
     apt-get install -qy openjdk-7-jre-headless
 
-ADD http://downloads.sourceforge.net/project/subsonic/subsonic/5.2/subsonic-5.2.deb /tmp/subsonic.deb
+ADD http://downloads.sourceforge.net/project/subsonic/subsonic/5.2.1/subsonic-5.2.1.deb /tmp/subsonic.deb
 RUN dpkg -i /tmp/subsonic.deb && \
     rm -rf /tmp/subsonic.deb && \
     mv /var/subsonic /var/subsonic.default && \
