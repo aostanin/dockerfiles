@@ -1,14 +1,14 @@
-# docker-nzbdrone
+# docker-sonarr
 
 ## Description
 
-A Dockerfile for [NzbDrone](http://nzbdrone.com/).
+A Dockerfile for [Sonarr](http://sonarr.tv/).
 
 ## Volumes
 
 ### `/data`
 
-Configuration files and state for NzbDrone.
+Configuration files and state for Sonarr.
 
 ## Ports
 
