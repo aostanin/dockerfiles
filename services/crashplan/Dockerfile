@@ -5,11 +5,11 @@ ENV LANG en_US.UTF-8
 RUN locale-gen $LANG
 
 ADD https://download.code42.com/installs/linux/install/CrashPlan/CrashPlan_4.4.1_Linux.tgz /tmp/CrashPlan.tgz
-RUN apt-get update -q && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -q && \
     apt-get install -qy curl && \
     cd /tmp && \
     tar xf CrashPlan.tgz && \
-    cd CrashPlan-install && \
+    cd crashplan-install && \
     sed -i 's/^more /: /g' install.sh && \
     (echo; echo; echo yes; echo ; echo y; echo; echo /backups; echo y; echo; echo; echo y; echo) | ./install.sh && \
     cd /usr/local/crashplan && \
@@ -21,7 +21,7 @@ RUN apt-get update -q && \
     ln -s /data/log /usr/local/crashplan/log && \
     mv /var/lib/crashplan /var/lib/crashplan.default && \
     ln -s /data/crashplan /var/lib/crashplan && \
-    rm -rf /tmp/CrashPlan.tgz /tmp/CrashPlan-install
+    rm -rf /tmp/CrashPlan.tgz /tmp/crashplan-install
 
 ADD start.sh /start.sh
 
